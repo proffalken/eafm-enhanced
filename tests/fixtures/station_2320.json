@@ -1,0 +1,85 @@
+{ 
+  "@context" : "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld" ,
+  "meta" : { 
+    "publisher" : "Environment Agency" ,
+    "licence" : "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" ,
+    "documentation" : "http://environment.data.gov.uk/flood-monitoring/doc/reference" ,
+    "version" : "0.9" ,
+    "comment" : "Status: Beta service" ,
+    "hasFormat" : [ "http://environment.data.gov.uk/flood-monitoring/id/stations/2320.rdf", "http://environment.data.gov.uk/flood-monitoring/id/stations/2320.ttl", "http://environment.data.gov.uk/flood-monitoring/id/stations/2320.html" ]
+  }
+   ,
+  "items" : { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/stations/2320" ,
+    "RLOIid" : "2196" ,
+    "catchmentName" : "Wye" ,
+    "dateOpened" : "2011-08-31" ,
+    "eaAreaName" : "Midlands - Shropshire Herefordshire Worcestershire and Gloucestershire" ,
+    "eaRegionName" : "Midlands" ,
+    "easting" : 360241 ,
+    "label" : "Lydbrook" ,
+    "lat" : 51.85366 ,
+    "long" : -2.578653 ,
+    "measures" : { 
+      "@id" : "http://environment.data.gov.uk/flood-monitoring/id/measures/2320-level-stage-i-15_min-mASD" ,
+      "datumType" : "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD" ,
+      "label" : "Lydbrook LVL - level-stage-i-15_min-mASD" ,
+      "latestReading" : { 
+        "@id" : "http://environment.data.gov.uk/flood-monitoring/data/readings/2320-level-stage-i-15_min-mASD/2026-10-24T07-15-00Z" ,
+        "date" : "2026-10-24" ,
+        "dateTime" : "2026-10-24T07:15:00Z" ,
+        "measure" : "http://environment.data.gov.uk/flood-monitoring/id/measures/2320-level-stage-i-15_min-mASD" ,
+        "value" : 1.285
+      }
+       ,
+      "notation" : "2320-level-stage-i-15_min-mASD" ,
+      "parameter" : "level" ,
+      "parameterName" : "Water Level" ,
+      "period" : 900 ,
+      "qualifier" : "Stage" ,
+      "station" : "http://environment.data.gov.uk/flood-monitoring/id/stations/2320" ,
+      "stationReference" : "2320" ,
+      "type" : [ "http://environment.data.gov.uk/flood-monitoring/def/core/Measure", "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel" ] ,
+      "unit" : "http://qudt.org/1.1/vocab/unit#Meter" ,
+      "unitName" : "mASD" ,
+      "valueType" : "instantaneous"
+    }
+     ,
+    "northing" : 217389 ,
+    "notation" : "2320" ,
+    "riverName" : "River Wye" ,
+    "stageScale" : { 
+      "@id" : "http://environment.data.gov.uk/flood-monitoring/id/stations/2320/stageScale" ,
+      "datum" : 0 ,
+      "highestRecent" : { 
+        "@id" : "http://environment.data.gov.uk/flood-monitoring/id/stations/2320/stageScale/highestRecent" ,
+        "dateTime" : "2014-02-10T20:30:00" ,
+        "value" : 5.839
+      }
+       ,
+      "maxOnRecord" : { 
+        "@id" : "http://environment.data.gov.uk/flood-monitoring/id/stations/2320/stageScale/maxOnRecord" ,
+        "dateTime" : "2020-02-18T03:15:00" ,
+        "value" : 7.551
+      }
+       ,
+      "minOnRecord" : { 
+        "@id" : "http://environment.data.gov.uk/flood-monitoring/id/stations/2320/stageScale/minOnRecord" ,
+        "dateTime" : "2011-09-06T00:45:00" ,
+        "value" : 0.32
+      }
+       ,
+      "scaleMax" : 6 ,
+      "typicalRangeHigh" : 4 ,
+      "typicalRangeLow" : 0.42
+    }
+     ,
+    "stationReference" : "2320" ,
+    "status" : "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive" ,
+    "statusDate" : "2025-11-10T15:20:00" ,
+    "town" : "Lydbrook" ,
+    "type" : [ "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel", "http://environment.data.gov.uk/flood-monitoring/def/core/Station" ] ,
+    "wiskiID" : "055843"
+  }
+}
+

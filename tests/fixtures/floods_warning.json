@@ -1,0 +1,25 @@
+{
+ "items": [
+  {
+   "@id": "http://environment.data.gov.uk/flood-monitoring/id/floods/122FWC045",
+   "description": "North Sea at Scarborough - Sandside",
+   "eaAreaName": "Yorkshire",
+   "eaRegionName": "No longer used",
+   "floodArea": {
+    "@id": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122FWC045",
+    "county": "North Yorkshire",
+    "notation": "122FWC045",
+    "polygon": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122FWC045/polygon",
+    "riverOrSea": "North Sea"
+   },
+   "floodAreaID": "122FWC045",
+   "isTidal": true,
+   "message": "High tides are expected to cause flooding overnight.  Flooding is expected from 02:00am to 04:30am on 24/10/2026.  Locations most affected will be coastal roads, footpaths and foreshore areas.  We are closely monitoring the situation .  Avoid coastal roads, footpaths and carparks, which may be flooded.   This message will be updated by 15:00hrs on Saturday 24 October or as the situation changes.\n",
+   "severity": "Flood warning",
+   "severityLevel": 2,
+   "timeMessageChanged": "2026-10-24T07:05:00",
+   "timeRaised": "2026-10-24T07:05:12",
+   "timeSeverityChanged": "2026-10-23T19:39:00"
+  }
+ ]
+}

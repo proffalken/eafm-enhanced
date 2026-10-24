@@ -1,0 +1,40 @@
+{ 
+  "@context" : "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld" ,
+  "meta" : { 
+    "publisher" : "Environment Agency" ,
+    "licence" : "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" ,
+    "documentation" : "http://environment.data.gov.uk/flood-monitoring/doc/reference" ,
+    "version" : "0.9" ,
+    "comment" : "Status: Beta service" ,
+    "hasFormat" : [ "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF120.rdf", "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF120.ttl", "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF120.html" ]
+  }
+   ,
+  "items" : { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF120" ,
+    "county" : "Gloucestershire, Herefordshire" ,
+    "description" : "River Wye in Gloucestershire" ,
+    "eaAreaName" : "West Midlands" ,
+    "envelope" : { 
+      "lowerCorner" : { 
+        "x" : 353137 ,
+        "y" : 205325
+      }
+       ,
+      "upperCorner" : { 
+        "x" : 360275 ,
+        "y" : 218159
+      }
+    }
+     ,
+    "fwdCode" : "031WAF120" ,
+    "label" : "River Wye in Gloucestershire" ,
+    "lat" : 51.8509 ,
+    "long" : -2.59943 ,
+    "notation" : "031WAF120" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF120/polygon" ,
+    "quickDialNumber" : "209015" ,
+    "riverOrSea" : "River Wye" ,
+    "type" : [ "http://environment.data.gov.uk/flood-monitoring/def/core/FloodAlertArea", "http://environment.data.gov.uk/flood-monitoring/def/core/FloodArea" ]
+  }
+}
+

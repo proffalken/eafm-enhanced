@@ -1,0 +1,157 @@
+{ 
+  "@context" : "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld" ,
+  "meta" : { 
+    "publisher" : "Environment Agency" ,
+    "licence" : "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" ,
+    "documentation" : "http://environment.data.gov.uk/flood-monitoring/doc/reference" ,
+    "version" : "0.9" ,
+    "comment" : "Status: Beta service" ,
+    "hasFormat" : [ "http://environment.data.gov.uk/flood-monitoring/id/floodAreas.csv?lat=51.842&long=-2.637&dist=10", "http://environment.data.gov.uk/flood-monitoring/id/floodAreas.rdf?lat=51.842&long=-2.637&dist=10", "http://environment.data.gov.uk/flood-monitoring/id/floodAreas.ttl?lat=51.842&long=-2.637&dist=10", "http://environment.data.gov.uk/flood-monitoring/id/floodAreas.html?lat=51.842&long=-2.637&dist=10" ] ,
+    "limit" : 500
+  }
+   ,
+  "items" : [ { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAT217" ,
+    "county" : "Gloucestershire" ,
+    "description" : "Severn estuary from Gloucester to Sharpness, including Sandhurst and Maisemore" ,
+    "eaAreaName" : "West Midlands" ,
+    "fwdCode" : "031WAT217" ,
+    "label" : "Severn estuary from Gloucester to Sharpness" ,
+    "lat" : 51.69439 ,
+    "long" : -2.56551 ,
+    "notation" : "031WAT217" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAT217/polygon" ,
+    "quickDialNumber" : "209028" ,
+    "riverOrSea" : "Severn Estuary"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031FWFWY0E" ,
+    "county" : "Gloucestershire, Herefordshire" ,
+    "description" : "River Wye at Lydbrook" ,
+    "eaAreaName" : "West Midlands" ,
+    "floodWatchArea" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF120" ,
+    "fwdCode" : "031FWFWY0E" ,
+    "label" : "River Wye at Lydbrook" ,
+    "lat" : 51.85902 ,
+    "long" : -2.59271 ,
+    "notation" : "031FWFWY0E" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031FWFWY0E/polygon" ,
+    "quickDialNumber" : "309112" ,
+    "riverOrSea" : "River Wye"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF120" ,
+    "county" : "Gloucestershire, Herefordshire" ,
+    "description" : "River Wye in Gloucestershire" ,
+    "eaAreaName" : "West Midlands" ,
+    "fwdCode" : "031WAF120" ,
+    "label" : "River Wye in Gloucestershire" ,
+    "lat" : 51.8509 ,
+    "long" : -2.59943 ,
+    "notation" : "031WAF120" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF120/polygon" ,
+    "quickDialNumber" : "209015" ,
+    "riverOrSea" : "River Wye"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF119" ,
+    "county" : "Gloucestershire, Herefordshire" ,
+    "description" : "River Wye in Herefordshire" ,
+    "eaAreaName" : "West Midlands" ,
+    "fwdCode" : "031WAF119" ,
+    "label" : "River Wye in Herefordshire" ,
+    "lat" : 51.94972 ,
+    "long" : -2.62833 ,
+    "notation" : "031WAF119" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF119/polygon" ,
+    "quickDialNumber" : "209014" ,
+    "riverOrSea" : "River Wye"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF215" ,
+    "county" : "Gloucestershire" ,
+    "description" : "River Lyd and Cinderford Brook" ,
+    "eaAreaName" : "West Midlands" ,
+    "fwdCode" : "031WAF215" ,
+    "label" : "Rivers in the Forest of Dean" ,
+    "lat" : 51.69461 ,
+    "long" : -2.56531 ,
+    "notation" : "031WAF215" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF215/polygon" ,
+    "quickDialNumber" : "209025" ,
+    "riverOrSea" : "Lyd, Cinderford Brook"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAT122" ,
+    "county" : "Gloucestershire" ,
+    "description" : "Wye Estuary in Gloucestershire" ,
+    "eaAreaName" : "West Midlands" ,
+    "fwdCode" : "031WAT122" ,
+    "label" : "Wye Estuary in Gloucestershire" ,
+    "lat" : 51.69981 ,
+    "long" : -2.66784 ,
+    "notation" : "031WAT122" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAT122/polygon" ,
+    "quickDialNumber" : "209027" ,
+    "riverOrSea" : "Wye Estuary"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF213" ,
+    "county" : "Gloucestershire, Herefordshire, Worcestershire" ,
+    "description" : "River Leadon and its tributaries" ,
+    "eaAreaName" : "West Midlands" ,
+    "fwdCode" : "031WAF213" ,
+    "label" : "River Leadon catchment" ,
+    "lat" : 51.9776 ,
+    "long" : -2.39645 ,
+    "notation" : "031WAF213" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF213/polygon" ,
+    "quickDialNumber" : "209023" ,
+    "riverOrSea" : "Leadon, Glynch"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031FWFWY0D" ,
+    "county" : "Herefordshire" ,
+    "description" : "River Wye from Hereford to Ross-On-Wye" ,
+    "eaAreaName" : "West Midlands" ,
+    "floodWatchArea" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF119" ,
+    "fwdCode" : "031FWFWY0D" ,
+    "label" : "River Wye from Hereford to Ross-On-Wye" ,
+    "lat" : 51.98761 ,
+    "long" : -2.62327 ,
+    "notation" : "031FWFWY0D" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031FWFWY0D/polygon" ,
+    "quickDialNumber" : "309111" ,
+    "riverOrSea" : "River Wye"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF121" ,
+    "county" : "Herefordshire" ,
+    "description" : "River Monnow and tributaries in England" ,
+    "eaAreaName" : "West Midlands" ,
+    "fwdCode" : "031WAF121" ,
+    "label" : "River Monnow and tributaries in England" ,
+    "lat" : 51.99375 ,
+    "long" : -2.90963 ,
+    "notation" : "031WAF121" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAF121/polygon" ,
+    "quickDialNumber" : "209016" ,
+    "riverOrSea" : "River Monnow"
+  }
+  , { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031FWFVB10" ,
+    "county" : "Gloucestershire" ,
+    "description" : "Valley Brook at Coleford, Whitecliff, Newland and Lower Redbrook" ,
+    "eaAreaName" : "West Midlands" ,
+    "floodWatchArea" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031WAT122" ,
+    "fwdCode" : "031FWFVB10" ,
+    "label" : "Valley Brook from Coleford to Lower Redbrook" ,
+    "lat" : 51.78282 ,
+    "long" : -2.63666 ,
+    "notation" : "031FWFVB10" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/031FWFVB10/polygon" ,
+    "quickDialNumber" : "309148"
+  }
+   ]
+}
+

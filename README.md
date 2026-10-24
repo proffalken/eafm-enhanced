@@ -47,6 +47,32 @@ Both of the entities created (Height & Status) have dynamic icons to give you a 
 ---
 
 
+### 5. 🚨 Enhancement: Flood Alert and Warning Areas
+
+As well as river gauges, you can add Environment Agency **flood alert areas** and **flood warning areas**. Alert areas are wide and get early flood alerts; warning areas are smaller and get flood warnings and severe flood warnings.
+
+When adding the integration, choose **Flood warning area**, give a point (it defaults to your Home Assistant location) and a search radius, then pick an area. Each area becomes a device with:
+
+* **Flood warning** (sensor): `none`, `flood_alert`, `flood_warning` or `severe_flood_warning`. Attributes include the EA's `severity` text and `message`, `time_raised`, `time_severity_changed`, `time_message_changed`, the area's `county` and `river_or_sea`, and a `url` for the area's page on Check for flooding.
+* **Flood warning in force** (binary sensor, safety): on while an alert or warning is in force.
+
+Areas are checked every 5 minutes; the EA updates them every 15. A warning the EA has marked "no longer in force" counts as `none`.
+
+Example automation:
+
+```yaml
+triggers:
+  - trigger: state
+    entity_id: sensor.river_wye_in_gloucestershire_flood_warning
+actions:
+  - action: notify.mobile_app_your_phone
+    data:
+      title: "{{ state_translated(trigger.entity_id) }}: {{ state_attr(trigger.entity_id, 'area') }}"
+      message: "{{ state_attr(trigger.entity_id, 'message') or 'No alert or warning in force.' }}"
+```
+
+---
+
 ## 🛠 Why Use This Over the Standard Version?
 
 | Feature | Standard Integration | **EAFME (This Fork)** |
@@ -56,6 +82,7 @@ Both of the entities created (Height & Status) have dynamic icons to give you a 
 | **River Status** (Normal/High/Low) | ❌ | ✅ |
 | **Easier Configuration** | Label Only | Label + Catchment + ID |
 | **Additional Attributes** | ❌ | ✅ |
+| **Flood Alerts & Warnings** | ❌ | ✅ |
 
 ---
 

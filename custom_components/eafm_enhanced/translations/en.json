@@ -1,0 +1,67 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Environment Agency flood monitoring",
+        "menu_options": {
+          "station": "River gauge (water level)",
+          "flood_area": "Flood warning area (alerts and warnings)"
+        }
+      },
+      "station": {
+        "title": "Add a river gauge",
+        "description": "Pick a monitoring station by name, catchment and RLOI ID.",
+        "data": {
+          "station": "Station"
+        }
+      },
+      "flood_area": {
+        "title": "Find a flood warning area",
+        "description": "Search for Environment Agency flood alert and flood warning areas near a point in England.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "radius": "Search radius"
+        },
+        "data_description": {
+          "latitude": "Defaults to the Home Assistant location.",
+          "longitude": "Defaults to the Home Assistant location.",
+          "radius": "Areas within this distance of the point are listed."
+        }
+      },
+      "pick_area": {
+        "title": "Pick a flood warning area",
+        "description": "Flood alert areas are wide and get early flood alerts. Flood warning areas are smaller and get flood warnings and severe flood warnings.",
+        "data": {
+          "flood_area": "Area"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Couldn't reach the Environment Agency flood API. Try again later.",
+      "no_areas": "No flood areas found. Try a larger radius or another point."
+    },
+    "abort": {
+      "already_configured": "This is already set up.",
+      "cannot_connect": "Couldn't reach the Environment Agency flood API. Try again later."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "warning": {
+        "name": "Flood warning",
+        "state": {
+          "none": "None in force",
+          "flood_alert": "Flood alert",
+          "flood_warning": "Flood warning",
+          "severe_flood_warning": "Severe flood warning"
+        }
+      }
+    },
+    "binary_sensor": {
+      "in_force": {
+        "name": "Flood warning in force"
+      }
+    }
+  }
+}
