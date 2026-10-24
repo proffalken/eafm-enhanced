@@ -13,13 +13,15 @@ from tests.conftest import LYDBROOK, WARNING_AREA, load_fixture
 STATIONS_URL = "https://environment.data.gov.uk/flood-monitoring/id/stations"
 
 
-def _mock_area(aioclient_mock, floods="floods_warning.json") -> None:
+def _mock_area(aioclient_mock, in_force=True) -> None:
     aioclient_mock.get(
         f"{AREAS_URL}/{WARNING_AREA}", json=load_fixture("flood_area_warning.json")
     )
-    aioclient_mock.get(
-        FLOODS_URL, params={"floodArea": WARNING_AREA}, json=load_fixture(floods)
-    )
+    url = f"{FLOODS_URL}/{WARNING_AREA}"
+    if in_force:
+        aioclient_mock.get(url, json=load_fixture(f"flood_warning_{WARNING_AREA}.json"))
+    else:
+        aioclient_mock.get(url, status=404, text="<html>")
 
 
 def _entity(hass, unique_id: str) -> str:
@@ -53,7 +55,7 @@ async def test_flood_area_entities(hass, flood_area_entry, aioclient_mock) -> No
 async def test_flood_area_with_nothing_in_force(
     hass, flood_area_entry, aioclient_mock
 ) -> None:
-    _mock_area(aioclient_mock, "floods_none.json")
+    _mock_area(aioclient_mock, in_force=False)
 
     assert await hass.config_entries.async_setup(flood_area_entry.entry_id)
     await hass.async_block_till_done()
@@ -68,12 +70,12 @@ async def test_flood_area_with_nothing_in_force(
 
 
 async def test_flood_area_updates(hass, flood_area_entry, aioclient_mock) -> None:
-    _mock_area(aioclient_mock, "floods_none.json")
+    _mock_area(aioclient_mock, in_force=False)
     assert await hass.config_entries.async_setup(flood_area_entry.entry_id)
     await hass.async_block_till_done()
 
     aioclient_mock.clear_requests()
-    _mock_area(aioclient_mock, "floods_warning.json")
+    _mock_area(aioclient_mock)
     async_fire_time_changed(hass, dt_util.utcnow() + timedelta(minutes=6))
     await hass.async_block_till_done()
 

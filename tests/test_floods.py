@@ -16,6 +16,8 @@ from custom_components.eafm_enhanced.floods import (
 )
 from tests.conftest import ALERT_AREA, WARNING_AREA, load_fixture
 
+WARNING = f"flood_warning_{WARNING_AREA}.json"
+
 
 def test_area_kind_comes_from_its_code() -> None:
     alert = FloodArea.from_api(load_fixture("flood_area_031WAF120.json")["items"])
@@ -32,9 +34,7 @@ def test_area_kind_comes_from_its_code() -> None:
 
 
 def test_warning_from_the_api() -> None:
-    (item,) = load_fixture("floods_warning.json")["items"]
-
-    warning = FloodWarning.from_api(item)
+    warning = FloodWarning.from_api(load_fixture(WARNING)["items"])
 
     assert warning.area == WARNING_AREA
     assert warning.severity_level == 2
@@ -59,48 +59,40 @@ def test_severity_state(level, state) -> None:
 
 
 def test_a_warning_no_longer_in_force() -> None:
-    (item,) = load_fixture("floods_warning.json")["items"]
+    item = load_fixture(WARNING)["items"]
     item.update(severityLevel=4, severity="Warning no longer in force")
 
     assert not FloodWarning.from_api(item).in_force
 
 
 async def test_get_flood_warning(hass, aioclient_mock) -> None:
-    aioclient_mock.get(
-        FLOODS_URL,
-        params={"floodArea": WARNING_AREA},
-        json=load_fixture("floods_warning.json"),
-    )
+    aioclient_mock.get(f"{FLOODS_URL}/{WARNING_AREA}", json=load_fixture(WARNING))
 
     warning = await get_flood_warning(async_get_clientsession(hass), WARNING_AREA)
 
+    assert warning.area == WARNING_AREA
     assert warning.severity_level == 2
 
 
-async def test_no_warning(hass, aioclient_mock) -> None:
-    aioclient_mock.get(FLOODS_URL, params={"floodArea": ALERT_AREA}, json={"items": []})
+async def test_get_flood_alert(hass, aioclient_mock) -> None:
+    aioclient_mock.get(
+        f"{FLOODS_URL}/122WAC953", json=load_fixture("flood_alert_122WAC953.json")
+    )
+
+    warning = await get_flood_warning(async_get_clientsession(hass), "122WAC953")
+
+    assert warning.severity_level == 3
+
+
+async def test_no_warning_is_a_404(hass, aioclient_mock) -> None:
+    aioclient_mock.get(f"{FLOODS_URL}/{ALERT_AREA}", status=404, text="<html>")
 
     assert await get_flood_warning(async_get_clientsession(hass), ALERT_AREA) is None
 
 
-async def test_most_severe_warning_wins(hass, aioclient_mock) -> None:
-    (item,) = load_fixture("floods_warning.json")["items"]
-    ended = {**item, "severityLevel": 4, "severity": "Warning no longer in force"}
-    severe = {**item, "severityLevel": 1, "severity": "Severe flood warning"}
-    aioclient_mock.get(
-        FLOODS_URL,
-        params={"floodArea": WARNING_AREA},
-        json={"items": [ended, severe, item]},
-    )
-
-    warning = await get_flood_warning(async_get_clientsession(hass), WARNING_AREA)
-
-    assert warning.severity_level == 1
-
-
 @pytest.mark.parametrize("status", [500, 503])
 async def test_errors_raise(hass, aioclient_mock, status) -> None:
-    aioclient_mock.get(FLOODS_URL, params={"floodArea": ALERT_AREA}, status=status)
+    aioclient_mock.get(f"{FLOODS_URL}/{ALERT_AREA}", status=status)
 
     with pytest.raises(FloodError):
         await get_flood_warning(async_get_clientsession(hass), ALERT_AREA)

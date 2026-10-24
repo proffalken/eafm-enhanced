@@ -107,10 +107,15 @@ class FloodWarning:
 
 
 async def _get(
-    session: aiohttp.ClientSession, url: str, params: dict[str, str] | None = None
-) -> dict[str, Any]:
+    session: aiohttp.ClientSession,
+    url: str,
+    params: dict[str, str] | None = None,
+    missing_ok: bool = False,
+) -> dict[str, Any] | None:
     try:
         async with session.get(url, params=params, timeout=_TIMEOUT) as response:
+            if missing_ok and response.status == 404:
+                return None
             response.raise_for_status()
             body = await response.json()
     except (aiohttp.ClientError, TimeoutError, ValueError) as err:
@@ -147,12 +152,16 @@ async def get_flood_area(session: aiohttp.ClientSession, notation: str) -> Flood
 async def get_flood_warning(
     session: aiohttp.ClientSession, notation: str
 ) -> FloodWarning | None:
-    """The most severe alert or warning for an area, or None if there isn't one."""
-    body = await _get(session, FLOODS_URL, {"floodArea": notation})
-    warnings = [
-        FloodWarning.from_api(item)
-        for item in body.get("items") or []
-        if isinstance(item, dict)
-    ]
-    # Lower levels are more severe; level 4 (no longer in force) sorts last.
-    return min(warnings, key=lambda w: w.severity_level or 99, default=None)
+    """The alert or warning for an area, or None if there isn't one.
+
+    The EA answers 404 when nothing has been issued for the area.
+    """
+    body = await _get(session, f"{FLOODS_URL}/{notation}", missing_ok=True)
+    if body is None:
+        return None
+    item = body.get("items")
+    if isinstance(item, list):
+        item = item[0] if item else None
+    if not isinstance(item, dict):
+        raise FloodError(f"EA flood API returned no warning data for {notation}")
+    return FloodWarning.from_api(item)
