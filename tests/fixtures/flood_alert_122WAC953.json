@@ -1,0 +1,57 @@
+{ 
+  "@context" : "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld" ,
+  "meta" : { 
+    "publisher" : "Environment Agency" ,
+    "licence" : "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" ,
+    "documentation" : "http://environment.data.gov.uk/flood-monitoring/doc/reference" ,
+    "version" : "0.9" ,
+    "comment" : "Status: Beta service" ,
+    "hasFormat" : [ "http://environment.data.gov.uk/flood-monitoring/id/floods/122WAC953.rdf", "http://environment.data.gov.uk/flood-monitoring/id/floods/122WAC953.ttl", "http://environment.data.gov.uk/flood-monitoring/id/floods/122WAC953.html" ]
+  }
+   ,
+  "items" : { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floods/122WAC953" ,
+    "description" : "North Sea coast from Whitby to Filey" ,
+    "eaAreaName" : "Yorkshire" ,
+    "eaRegionName" : "No longer used" ,
+    "floodArea" : { 
+      "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122WAC953" ,
+      "county" : "East Riding of Yorkshire, North Yorkshire" ,
+      "currentWarning" : "http://environment.data.gov.uk/flood-monitoring/id/floods/122WAC953" ,
+      "description" : "The North Sea coast from Whitby to Filey, including Scarborough" ,
+      "eaAreaName" : "Yorkshire" ,
+      "envelope" : { 
+        "lowerCorner" : { 
+          "x" : 491970 ,
+          "y" : 471560
+        }
+         ,
+        "upperCorner" : { 
+          "x" : 525035 ,
+          "y" : 510885
+        }
+      }
+       ,
+      "fwdCode" : "122WAC953" ,
+      "label" : "North Sea coast from Whitby to Filey" ,
+      "lat" : 54.28219 ,
+      "long" : -0.38364 ,
+      "notation" : "122WAC953" ,
+      "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122WAC953/polygon" ,
+      "quickDialNumber" : "130401" ,
+      "riverOrSea" : "North Sea" ,
+      "type" : [ "http://environment.data.gov.uk/flood-monitoring/def/core/FloodAlertArea", "http://environment.data.gov.uk/flood-monitoring/def/core/FloodArea" ]
+    }
+     ,
+    "floodAreaID" : "122WAC953" ,
+    "isTidal" : true ,
+    "message" : "High tides overnight may lead to flooding.  Flooding is possible from 23:45 on 23/10/2026 to 05:00 on 24/10/2026.  Locations most affected will be coastal roads, footpaths along the North Sea coast from Whitby to Filey, including Scarborough. This is due to high tides, strong winds and large waves.  We are closely monitoring the situation .  Avoid coastal roads, footpaths and carparks, which may be flooded.   This message will be updated by 15:00hrs on Saturday 24 October or as the situation changes.\n" ,
+    "severity" : "Flood alert" ,
+    "severityLevel" : 3 ,
+    "timeMessageChanged" : "2026-10-24T07:06:00" ,
+    "timeRaised" : "2026-10-24T07:06:45" ,
+    "timeSeverityChanged" : "2026-10-23T19:34:00" ,
+    "type" : "http://environment.data.gov.uk/flood-monitoring/def/core/FloodAlertOrWarning"
+  }
+}
+

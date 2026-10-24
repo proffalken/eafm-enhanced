@@ -1,12 +1,15 @@
 {
   "domain": "eafm_enhanced",
   "name": "Environment Agency Flood Monitoring Enhanced",
-  "codeowners": ["@thefunkygibbon"],
+  "codeowners": [
+    "@thefunkygibbon",
+    "@proffalken"
+  ],
   "config_flow": true,
-  "documentation": "https://github.com/thefunkygibbon/eafm-enhanced/blob/main/README.md",
+  "documentation": "https://github.com/proffalken/eafm-enhanced/blob/main/README.md",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/thefunkygibbon/eafm-enhanced/issues",
-  "requirements": ["aiohttp>=3.7.4"],
-  "version": "2.1.0"
+  "issue_tracker": "https://github.com/proffalken/eafm-enhanced/issues",
+  "requirements": [],
+  "version": "2.2.0"
 }

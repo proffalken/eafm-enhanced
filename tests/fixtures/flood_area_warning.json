@@ -1,0 +1,58 @@
+{ 
+  "@context" : "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld" ,
+  "meta" : { 
+    "publisher" : "Environment Agency" ,
+    "licence" : "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" ,
+    "documentation" : "http://environment.data.gov.uk/flood-monitoring/doc/reference" ,
+    "version" : "0.9" ,
+    "comment" : "Status: Beta service" ,
+    "hasFormat" : [ "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122FWC045.rdf", "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122FWC045.ttl", "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122FWC045.html" ]
+  }
+   ,
+  "items" : { 
+    "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122FWC045" ,
+    "county" : "North Yorkshire" ,
+    "currentWarning" : { 
+      "@id" : "http://environment.data.gov.uk/flood-monitoring/id/floods/122FWC045" ,
+      "description" : "North Sea at Scarborough - Sandside" ,
+      "eaAreaName" : "Yorkshire" ,
+      "eaRegionName" : "No longer used" ,
+      "floodArea" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122FWC045" ,
+      "floodAreaID" : "122FWC045" ,
+      "isTidal" : true ,
+      "message" : "High tides are expected to cause flooding overnight.  Flooding is expected from 02:00am to 04:30am on 24/10/2026.  Locations most affected will be coastal roads, footpaths and foreshore areas.  We are closely monitoring the situation .  Avoid coastal roads, footpaths and carparks, which may be flooded.   This message will be updated by 15:00hrs on Saturday 24 October or as the situation changes.\n" ,
+      "severity" : "Flood warning" ,
+      "severityLevel" : 2 ,
+      "timeMessageChanged" : "2026-10-24T07:05:00" ,
+      "timeRaised" : "2026-10-24T07:05:12" ,
+      "timeSeverityChanged" : "2026-10-23T19:39:00" ,
+      "type" : "http://environment.data.gov.uk/flood-monitoring/def/core/FloodAlertOrWarning"
+    }
+     ,
+    "description" : "Properties on Sandside around the Old Harbour" ,
+    "eaAreaName" : "Yorkshire" ,
+    "envelope" : { 
+      "lowerCorner" : { 
+        "x" : 504656 ,
+        "y" : 488537
+      }
+       ,
+      "upperCorner" : { 
+        "x" : 505146 ,
+        "y" : 488830
+      }
+    }
+     ,
+    "floodWatchArea" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122WAC953" ,
+    "fwdCode" : "122FWC045" ,
+    "label" : "North Sea at Scarborough - Sandside" ,
+    "lat" : 54.28364 ,
+    "long" : -0.39051 ,
+    "notation" : "122FWC045" ,
+    "polygon" : "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/122FWC045/polygon" ,
+    "quickDialNumber" : "303000" ,
+    "riverOrSea" : "North Sea" ,
+    "type" : [ "http://environment.data.gov.uk/flood-monitoring/def/core/FloodArea", "http://environment.data.gov.uk/flood-monitoring/def/core/FloodWarningArea" ]
+  }
+}
+

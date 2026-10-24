@@ -12,6 +12,12 @@ SCAN_INTERVAL = timedelta(minutes=15)
 DOMAIN = "eafm_enhanced"
 
 async def async_setup_entry(hass, entry, async_add_entities):
+    if "flood_area" in entry.data:
+        from .flood_entities import FloodWarningSensor
+
+        async_add_entities([FloodWarningSensor(entry.runtime_data, "warning")])
+        return
+
     from homeassistant.helpers.aiohttp_client import async_get_clientsession
     session = async_get_clientsession(hass)
     station_ref = entry.data["station"]
